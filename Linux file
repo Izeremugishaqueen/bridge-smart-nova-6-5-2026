@@ -1,0 +1,51 @@
+rm -rf ~/Izere_mugisha_queen_smartnova
+
+mkdir -p ~/Izere_mugisha_queen_smartnova/{company,staff,projects,logs,backup}
+
+cd ~/Izere_mugisha_queen_smartnova
+
+cat > company/info.txt <<EOF
+Smart Nova Solutions
+Location: Kigali Innovation City
+Founded: 2022
+Services: Software Development, Cloud Computing, IT Support
+EOF
+
+cat > staff/engineers.txt <<EOF
+Alice - Software Engineer
+Bob - Network Engineer
+John - Cloud Engineer
+EOF
+
+cat > staff/admins.txt <<EOF
+Grace
+Eric
+EOF
+
+cat > projects/current.txt <<EOF
+Smart Parking System - improving city parking
+E-learning Platform - online education system
+EOF
+
+cat > projects/completed.txt <<EOF
+School Management System completed successfully
+EOF
+
+date     >> logs/server_info.txt
+hostname >> logs/server_info.txt
+uname -a >> logs/server_info.txt
+uptime   >> logs/server_info.txt
+whoami   >> logs/server_info.txt
+
+cp staff/engineers.txt backup/
+
+sudo apt-get update -y
+sudo apt-get install tree -y
+
+tree ~/Izere_mugisha_queen_smartnova
+
+echo "---- FILE LIST ----"
+find ~/Izere_mugisha_queen_smartnova -type f
+
+echo "---- FILE COUNT ----"
+find ~/Izere_mugisha_queen_smartnova -type f | wc -l
